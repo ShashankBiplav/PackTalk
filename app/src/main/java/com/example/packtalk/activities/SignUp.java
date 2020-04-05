@@ -57,7 +57,9 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         logInTextButton.setOnClickListener(this);
 
         if(ParseUser.getCurrentUser() != null) {
-            ParseUser.getCurrentUser().logOut();
+            //token session is generated when a user is logged into parse
+            //ParseUser.getCurrentUser().logOut();
+            transitionToHome();
         }
     }
 
@@ -97,6 +99,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                                         appUser.getUsername() + " is Signed Up",
                                         Toast.LENGTH_SHORT, FancyToast.SUCCESS,
                                         true).show();
+                                //if sign up is successful then go to home
+                                transitionToHome();
                             } else {
                                 FancyToast.makeText(SignUp.this,
                                         "An error occurred!" + "\n" + e.getMessage(),
@@ -133,6 +137,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         }
 
     }
-
-
+private void transitionToHome(){
+    Intent intent = new Intent(SignUp.this, HomeActivity.class);
+    startActivity(intent);
+}
 }

@@ -56,7 +56,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         signUpTextButton.setOnClickListener(this);
 
         if (ParseUser.getCurrentUser() != null){
-            ParseUser.getCurrentUser().logOut();
+            //a token session is generated when a user is logged into parse
+            //ParseUser.getCurrentUser().logOut();
+            transitionToHome();
         }
     }
 
@@ -91,6 +93,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                                                 user.getUsername() + " is Logged in",
                                                 Toast.LENGTH_SHORT, FancyToast.SUCCESS,
                                                 true).show();
+                                        //after login successful go to home
+                                        transitionToHome();
                                     } else {
                                         FancyToast.makeText(Login.this,
                                                 "An error occurred!" + "\n" + e.getMessage(),
@@ -122,5 +126,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
             e.printStackTrace();
         }
 
+    }
+    private void transitionToHome(){
+        Intent intent = new Intent(Login.this, HomeActivity.class);
+        startActivity(intent);
     }
 }

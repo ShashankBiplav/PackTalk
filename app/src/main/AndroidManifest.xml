@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activities.HomeActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity"></activity>
         <activity
             android:name=".activities.MainActivity"
