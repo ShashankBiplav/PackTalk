@@ -7,8 +7,7 @@
     android:background="@color/whiteCardColor"
 
     android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"
-    app:title="@string/app_name"
-    app:titleMarginStart="300sp">
+    app:title="@string/app_name">
 
 
 </androidx.appcompat.widget.Toolbar>

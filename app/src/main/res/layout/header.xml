@@ -13,6 +13,7 @@
         android:src="@drawable/ic_profile"/>
 
     <TextView
+        android:id="@+id/navHeaderUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/leckerli_one"
@@ -20,6 +21,7 @@
         android:textSize="24sp" />
 
     <TextView
+        android:id="@+id/navHeaderEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sacramento"

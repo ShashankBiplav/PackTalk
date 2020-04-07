@@ -20,11 +20,11 @@
 
     </group>
 
-
+    <group android:checkableBehavior="single">
     <item android:title="App">
 
         <menu>
-            <group android:checkableBehavior="single">
+
                 <item
                     android:id="@+id/itemSettings"
                     android:icon="@drawable/ic_settings"
@@ -36,16 +36,17 @@
                     android:icon="@drawable/ic_logout"
                     android:title="Logout" />
 
-            </group>
+
 
         </menu>
     </item>
+    </group>
 
-
+    <group android:checkableBehavior="single">
     <item android:title="About">
 
         <menu>
-            <group android:checkableBehavior="single">
+
 
             <item
                 android:id="@+id/itemAboutApp"
@@ -57,9 +58,10 @@
                 android:icon="@drawable/ic_developer"
                 android:title="About Developer" />
 
-            </group>
+
         </menu>
 
     </item>
+    </group>
 
 </menu>

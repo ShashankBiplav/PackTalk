@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MakeAnnouncement">
+    tools:context=".activities.CreatePost">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="288dp"
-        android:layout_height="395dp"
+        android:id="@+id/imageView2"
+        android:layout_width="300dp"
+        android:layout_height="314dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_announcement" />
+        app:srcCompat="@drawable/ic_createpost" />
 </androidx.constraintlayout.widget.ConstraintLayout>
