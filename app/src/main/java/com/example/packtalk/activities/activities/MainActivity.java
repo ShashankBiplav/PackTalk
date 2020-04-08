@@ -1,12 +1,9 @@
-package com.example.packtalk.activities;
+package com.example.packtalk.activities.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.example.packtalk.R;
-import com.parse.ParseObject;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.packtalk.activities;
+package com.example.packtalk.activities.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -13,16 +13,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.packtalk.R;
+import com.example.packtalk.activities.TabAdapter;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.parse.ParseUser;
-
-import java.util.Objects;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -35,6 +35,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
 
+    private ParseUser currentUser;
+
 //    private String name, email;
 
     @Override
@@ -43,7 +45,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_home);
 
         //calling parseServer for user information access
-        final ParseUser currentUser = ParseUser.getCurrentUser();
+        currentUser = ParseUser.getCurrentUser();
 
         navigationView =findViewById(R.id.navigationView);
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -128,6 +130,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             case R.id.itemSettings:
                 break;
             case R.id.itemLogout:
+                ParseUser.getCurrentUser().logOut();
+
+                FancyToast.makeText(HomeActivity.this,
+                        currentUser.getUsername() + " , you are Logged Out",
+                        Toast.LENGTH_SHORT, FancyToast.SUCCESS,
+                        true).show();
+                Intent intentLogout = new Intent(HomeActivity.this, Login.class);
+                startActivity(intentLogout);
+                finish();
                 break;
             case R.id.itemAboutApp:
                 break;

@@ -11,13 +11,22 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.packtalk.R;
+import com.example.packtalk.activities.tabs.AnnouncementsTab;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 
 public class AnnouncementsAdapter extends RecyclerView.Adapter<AnnouncementsAdapter.AnnouncementsViewHolder> {
 
     Context mContext;
     List<AnnouncementsItem> mList;
+
+
+//    public AnnouncementsAdapter(AnnouncementsTab announcementsTab, List<AnnouncementsItem> data) {
+//        this. =mList;
+//    }
+
 
     @NonNull
     @Override

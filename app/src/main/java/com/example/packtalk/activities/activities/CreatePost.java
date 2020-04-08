@@ -1,4 +1,4 @@
-package com.example.packtalk.activities;
+package com.example.packtalk.activities.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.packtalk.R;
 
-public class UpdateProfile extends AppCompatActivity {
+public class CreatePost extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_profile);
+        setContentView(R.layout.activity_create_post);
     }
 }
