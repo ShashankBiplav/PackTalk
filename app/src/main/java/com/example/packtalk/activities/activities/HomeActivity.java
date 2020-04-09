@@ -71,27 +71,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close );
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        //removing tint from the icons in navigation drawer
+        //removing icon tint from the icons in navigation drawer
         navigationView.setItemIconTintList(null);
-
-        //setting username and email of header in navigation drawer dynamically
-//        if( navigationView != null ){
-//            LinearLayout mParent = ( LinearLayout ) navigationView.getHeaderView( 0 );
-//
-//            if( mParent != null ){
-//                // Set your values to the image and text view by declaring and setting as you need to here.
-//                headerUsername.setText( Objects.requireNonNull(currentUser.get("username")).toString());
-//                headerEmail.setText(Objects.requireNonNull(currentUser.get("email")).toString());
-//            }
-//        }
 
 
         //to make navigation drawer items clickable
         assert navigationView != null;
         navigationView.setNavigationItemSelectedListener(this);
-
-
-
 
 
         //for displaying fragments
@@ -101,6 +87,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         tabLayout = findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager, false);
+
+        //setting fragment icons and removing icon tint
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_posts);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_announcement);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_chats);
+        tabLayout.getTabAt(3).setIcon(R.drawable.ic_folks);
+        tabLayout.setTabIconTint(null);
 
 
     }

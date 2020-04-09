@@ -2,8 +2,8 @@ package com.example.packtalk.activities;
 
 public class AnnouncementsItem {
 
-    String username, announcement, date;
-    int userProfilePicture;
+    private String username, announcement, date;
+    private int userProfilePicture;
 
     public AnnouncementsItem(){
     }

@@ -140,5 +140,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 private void transitionToHome(){
     Intent intent = new Intent(SignUp.this, HomeActivity.class);
     startActivity(intent);
+    finish();
 }
 }

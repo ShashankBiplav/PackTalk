@@ -129,5 +129,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     private void transitionToHome(){
         Intent intent = new Intent(Login.this, HomeActivity.class);
         startActivity(intent);
+        finish();
     }
 }
