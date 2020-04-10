@@ -9,10 +9,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +24,9 @@ import com.example.packtalk.R;
 import com.example.packtalk.activities.TabAdapter;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.parse.GetDataCallback;
+import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseUser;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
@@ -36,8 +42,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawerLayout;
 
     private ParseUser currentUser;
+    private ImageView navHeaderProfilePicture;
 
-//    private String name, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +61,29 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         navigationView.addHeaderView(navHeader);
         TextView headerUsername = (TextView) navHeader.findViewById (R.id.navHeaderUsername);
         TextView headerEmail = (TextView) navHeader.findViewById (R.id.navHeaderEmail);
+        navHeaderProfilePicture = navHeader.findViewById(R.id.navHeaderProfilePicture);
         headerUsername.setText(currentUser.get("username").toString());
         headerEmail.setText(currentUser.get("email").toString());
+
+        //setting user profile picture in nav header
+        ParseFile profilePicture = (ParseFile) currentUser.get("profilePicture");
+
+        if (profilePicture !=null) {
+            profilePicture.getDataInBackground(new GetDataCallback() {
+                @Override
+                public void done(byte[] data, ParseException e) {
+                    if (data != null && e == null) {
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+                        navHeaderProfilePicture.setImageBitmap(bitmap);
+                    } else {
+                        navHeaderProfilePicture.setImageResource(R.drawable.ic_defaultprofilepicture);
+                    }
+                }
+            });
+        }
+        else{
+            navHeaderProfilePicture.setImageResource(R.drawable.ic_defaultprofilepicture);
+        }
 
 
         //custom toolbar
@@ -90,7 +117,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         //setting fragment icons and removing icon tint
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_posts);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_announcement);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_announcement_feed);
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_chats);
         tabLayout.getTabAt(3).setIcon(R.drawable.ic_folks);
         tabLayout.setTabIconTint(null);
