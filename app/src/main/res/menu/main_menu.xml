@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+
 
         <item
             android:id="@+id/itemUpdateProfile"
             android:icon="@drawable/ic_profile"
             android:title="Profile" />
+
+        <item
+            android:id="@+id/itemAllUsers"
+            android:icon="@drawable/ic_all_users"
+            android:title="People"/>
 
         <item
             android:id="@+id/itemLikedPosts"
@@ -18,7 +23,7 @@
             android:icon="@drawable/ic_savedannouncement"
             android:title="Saved Announcements" />
 
-    </group>
+
 
     <group android:checkableBehavior="single">
     <item android:title="App">

@@ -142,6 +142,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             case R.id.itemUpdateProfile:
                 Intent intent = new Intent(HomeActivity.this, UpdateProfile.class);
                 startActivity(intent);
+                finish();
+                break;
+            case R.id.itemAllUsers:
+                Intent intent1  = new Intent(HomeActivity.this, AllUsers.class);
+                startActivity(intent1);
                 break;
             case R.id.itemLikedPosts:
                 break;
