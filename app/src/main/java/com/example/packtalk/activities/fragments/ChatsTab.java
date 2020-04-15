@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import com.example.packtalk.R;
 import com.example.packtalk.activities.adapters.ChatsAdapter;
@@ -49,6 +50,12 @@ public class ChatsTab extends Fragment {
         super.onCreate(savedInstanceState);
 
         mChatsItems.add(new ChatsItem("Shashank","shashankbiplav@gmail.com",R.drawable.ic_developer));
+        mChatsItems.add(new ChatsItem("Shashank","shashankbiplav@gmail.com",R.drawable.ic_developer));
+        mChatsItems.add(new ChatsItem("Shashank","shashankbiplav@gmail.com",R.drawable.ic_developer));
+        mChatsItems.add(new ChatsItem("Shashank","shashankbiplav@gmail.com",R.drawable.ic_developer));
+        mChatsItems.add(new ChatsItem("Shashank","shashankbiplav@gmail.com",R.drawable.ic_developer));
+        mChatsItems.add(new ChatsItem("Shashank","shashankbiplav@gmail.com",R.drawable.ic_developer));
 
     }
+
 }
