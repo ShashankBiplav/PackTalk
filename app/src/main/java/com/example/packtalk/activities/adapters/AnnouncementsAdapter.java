@@ -1,22 +1,18 @@
-package com.example.packtalk.activities;
+package com.example.packtalk.activities.adapters;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.packtalk.R;
-import com.example.packtalk.activities.tabs.AnnouncementsTab;
+import com.example.packtalk.activities.models.AnnouncementsItem;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.List;
 
 public class AnnouncementsAdapter extends RecyclerView.Adapter<AnnouncementsAdapter.MyViewHolder> {

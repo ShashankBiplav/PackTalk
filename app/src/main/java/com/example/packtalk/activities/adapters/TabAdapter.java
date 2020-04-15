@@ -1,4 +1,4 @@
-package com.example.packtalk.activities;
+package com.example.packtalk.activities.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -6,10 +6,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.packtalk.activities.tabs.AnnouncementsTab;
-import com.example.packtalk.activities.tabs.ChatsTab;
-import com.example.packtalk.activities.tabs.FolksTab;
-import com.example.packtalk.activities.tabs.PostsTab;
+import com.example.packtalk.activities.fragments.AnnouncementsTab;
+import com.example.packtalk.activities.fragments.ChatsTab;
+import com.example.packtalk.activities.fragments.FolksTab;
+import com.example.packtalk.activities.fragments.PostsTab;
 
 public class TabAdapter extends FragmentPagerAdapter {
     public TabAdapter(@NonNull FragmentManager fm, int behavior) {

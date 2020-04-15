@@ -1,4 +1,4 @@
-package com.example.packtalk.activities;
+package com.example.packtalk.activities.models;
 
 public class AnnouncementsItem {
 

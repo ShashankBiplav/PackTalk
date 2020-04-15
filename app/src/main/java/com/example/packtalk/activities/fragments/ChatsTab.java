@@ -1,4 +1,4 @@
-package com.example.packtalk.activities.tabs;
+package com.example.packtalk.activities.fragments;
 
 import android.os.Bundle;
 
@@ -13,9 +13,9 @@ import com.example.packtalk.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FolksTab extends Fragment {
+public class ChatsTab extends Fragment {
 
-    public FolksTab() {
+    public ChatsTab() {
         // Required empty public constructor
     }
 
@@ -24,6 +24,6 @@ public class FolksTab extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_folks_tab, container, false);
+        return inflater.inflate(R.layout.fragment_chats_tab, container, false);
     }
 }

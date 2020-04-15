@@ -21,7 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.packtalk.R;
-import com.example.packtalk.activities.TabAdapter;
+import com.example.packtalk.activities.adapters.TabAdapter;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.parse.GetDataCallback;

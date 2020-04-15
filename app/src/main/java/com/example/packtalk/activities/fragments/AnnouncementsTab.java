@@ -1,8 +1,6 @@
-package com.example.packtalk.activities.tabs;
+package com.example.packtalk.activities.fragments;
 
 import android.app.ProgressDialog;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -15,15 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.packtalk.R;
-import com.example.packtalk.activities.AnnouncementsAdapter;
-import com.example.packtalk.activities.AnnouncementsItem;
+import com.example.packtalk.activities.adapters.AnnouncementsAdapter;
+import com.example.packtalk.activities.models.AnnouncementsItem;
 import com.parse.FindCallback;
-import com.parse.GetDataCallback;
 import com.parse.ParseException;
-import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

@@ -4,16 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import com.example.packtalk.R;
-import com.example.packtalk.activities.AllUsersAdapter;
-import com.example.packtalk.activities.AllUsersItem;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
+import com.example.packtalk.activities.adapters.AllUsersAdapter;
+import com.example.packtalk.activities.models.AllUsersItem;
 
 import java.util.ArrayList;
 import java.util.List;

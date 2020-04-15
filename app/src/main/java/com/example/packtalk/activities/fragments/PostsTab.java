@@ -1,4 +1,4 @@
-package com.example.packtalk.activities.tabs;
+package com.example.packtalk.activities.fragments;
 
 import android.os.Bundle;
 
