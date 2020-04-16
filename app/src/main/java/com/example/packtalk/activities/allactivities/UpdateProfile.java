@@ -1,4 +1,4 @@
-package com.example.packtalk.activities.activities;
+package com.example.packtalk.activities.allactivities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,11 +30,8 @@ import com.parse.ParseFile;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.shashank.sony.fancytoastlib.FancyToast;
-import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UpdateProfile extends AppCompatActivity implements View.OnClickListener{
 

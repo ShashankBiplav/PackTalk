@@ -1,7 +1,6 @@
 package com.example.packtalk.activities.adapters;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -16,8 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.packtalk.R;
-import com.example.packtalk.activities.activities.ChatActivity;
-import com.example.packtalk.activities.activities.Login;
+import com.example.packtalk.activities.allactivities.ChatActivity;
 import com.example.packtalk.activities.models.ChatsItem;
 import com.shashank.sony.fancytoastlib.FancyToast;
 

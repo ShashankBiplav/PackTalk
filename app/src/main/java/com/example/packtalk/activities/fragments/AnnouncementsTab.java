@@ -45,11 +45,12 @@ public class AnnouncementsTab extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_announcements_tab, container, false);
-
+        //initializing recycler view and setting up adapter here also
+        //the reason being  initializing recyclerview as soon as it is attached to the fragment
         recyclerViewAnnouncements = view.findViewById(R.id.recyclerViewAnnouncements);
-//        AnnouncementsAdapter announcementsAdapter = new AnnouncementsAdapter(getContext(), mData);
-//        recyclerViewAnnouncements.setLayoutManager(new LinearLayoutManager(getActivity()));
-//        recyclerViewAnnouncements.setAdapter(announcementsAdapter);
+        AnnouncementsAdapter announcementsAdapter = new AnnouncementsAdapter(getContext(), mData);
+        recyclerViewAnnouncements.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerViewAnnouncements.setAdapter(announcementsAdapter);
 
         return view;
     }
