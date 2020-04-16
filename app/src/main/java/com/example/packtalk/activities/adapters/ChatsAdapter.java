@@ -38,7 +38,7 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.MyViewHolder
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view;
+        final View view;
         view = LayoutInflater.from(mContext).inflate(R.layout.item_chats,parent,false);
         final MyViewHolder viewHolder = new MyViewHolder(view);
 
@@ -48,7 +48,8 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.MyViewHolder
             @Override
             public void onClick(View v) {
                 FancyToast.makeText(mContext,
-                        "Test Click" + String.valueOf(viewHolder.getAdapterPosition()),
+                        "Test Click" + String.valueOf(viewHolder.getAdapterPosition())+"\n"+
+                                mChatsItems.get(viewHolder.getAdapterPosition()).getEmail(),
                         Toast.LENGTH_SHORT, FancyToast.SUCCESS,
                         true).show();
                 Intent intent = new Intent(mContext, ChatActivity.class);
