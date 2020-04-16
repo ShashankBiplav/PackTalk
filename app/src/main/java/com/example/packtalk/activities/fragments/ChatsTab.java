@@ -1,5 +1,6 @@
 package com.example.packtalk.activities.fragments;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -15,6 +16,11 @@ import android.widget.AdapterView;
 import com.example.packtalk.R;
 import com.example.packtalk.activities.adapters.ChatsAdapter;
 import com.example.packtalk.activities.models.ChatsItem;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,12 +56,32 @@ public class ChatsTab extends Fragment {
         super.onCreate(savedInstanceState);
 
         mChatsItems.add(new ChatsItem("Shashank","shashankbiplav@gmail.com",R.drawable.ic_developer));
-        mChatsItems.add(new ChatsItem("Shashank","shashankbiplav@gmail.com",R.drawable.ic_developer));
-        mChatsItems.add(new ChatsItem("Shashank","shashankbiplav@gmail.com",R.drawable.ic_developer));
-        mChatsItems.add(new ChatsItem("Shashank","shashankbiplav@gmail.com",R.drawable.ic_developer));
-        mChatsItems.add(new ChatsItem("Shashank","shashankbiplav@gmail.com",R.drawable.ic_developer));
-        mChatsItems.add(new ChatsItem("Shashank","shashankbiplav@gmail.com",R.drawable.ic_developer));
+        try {
 
+//            final ProgressDialog progressDialog = ProgressDialog.show(getActivity(), "Loading Chats...", "Please wait...", true);
+
+
+            ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("User");
+            parseQuery.whereNotEqualTo("username", ParseUser.getCurrentUser().getUsername());
+            parseQuery.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> objects, ParseException e) {
+                    if ((objects.size() > 0) && e == null) {
+                        for (ParseObject user : objects) {
+                                mChatsItems.add(new ChatsItem(user.getString("username"),
+                                        user.getString("email"),R.drawable.ic_developer));
+                        }
+                        ChatsAdapter recyclerViewChatsAdapter = new ChatsAdapter(getContext(),mChatsItems);
+                        recyclerViewChats.setLayoutManager(new LinearLayoutManager(getActivity()));
+                        recyclerViewChats.setAdapter(recyclerViewChatsAdapter);
+                    }
+                }
+            });
+
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
-
 }

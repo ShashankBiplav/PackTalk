@@ -1,7 +1,9 @@
 package com.example.packtalk.activities.adapters;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.packtalk.R;
+import com.example.packtalk.activities.activities.ChatActivity;
 import com.example.packtalk.activities.activities.Login;
 import com.example.packtalk.activities.models.ChatsItem;
 import com.shashank.sony.fancytoastlib.FancyToast;
@@ -24,7 +27,7 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.MyViewHolder
 
     Context mContext;
     List<ChatsItem> mChatsItems;
-    Dialog myDialog;
+    Activity chatsActivity;
 
     public ChatsAdapter(Context context, List<ChatsItem> chatsItems) {
         this.mContext = context;
@@ -39,6 +42,8 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.MyViewHolder
         view = LayoutInflater.from(mContext).inflate(R.layout.item_chats,parent,false);
         final MyViewHolder viewHolder = new MyViewHolder(view);
 
+
+
         viewHolder.linearLayoutChatsItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +51,14 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.MyViewHolder
                         "Test Click" + String.valueOf(viewHolder.getAdapterPosition()),
                         Toast.LENGTH_SHORT, FancyToast.SUCCESS,
                         true).show();
+                Intent intent = new Intent(mContext, ChatActivity.class);
+                intent.putExtra("selectedUser",viewHolder.getAdapterPosition());
+                mContext.startActivity(intent);
+//                chatsActivity.setContentView(R.layout.activity_chat);
+//
+
+//                chatsActivity.startActivity(intent);
+
             }
         });
 
@@ -80,5 +93,4 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.MyViewHolder
 
         }
     }
-
 }

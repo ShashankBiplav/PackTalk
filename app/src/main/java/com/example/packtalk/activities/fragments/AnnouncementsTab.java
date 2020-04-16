@@ -47,9 +47,9 @@ public class AnnouncementsTab extends Fragment{
         View view = inflater.inflate(R.layout.fragment_announcements_tab, container, false);
 
         recyclerViewAnnouncements = view.findViewById(R.id.recyclerViewAnnouncements);
-        AnnouncementsAdapter announcementsAdapter = new AnnouncementsAdapter(getContext(), mData);
-        recyclerViewAnnouncements.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerViewAnnouncements.setAdapter(announcementsAdapter);
+//        AnnouncementsAdapter announcementsAdapter = new AnnouncementsAdapter(getContext(), mData);
+//        recyclerViewAnnouncements.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        recyclerViewAnnouncements.setAdapter(announcementsAdapter);
 
         return view;
     }
@@ -61,6 +61,7 @@ public class AnnouncementsTab extends Fragment{
 
             try {
 
+                final ProgressDialog progressDialog = ProgressDialog.show(getActivity(), "Loading Announcements...", "Please wait...", true);
 
 
                 ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("myAnnouncement");
@@ -70,7 +71,6 @@ public class AnnouncementsTab extends Fragment{
                     public void done(List<ParseObject> objects, ParseException e) {
                          if (objects.size() >0){
 
-                             final ProgressDialog progressDialog = ProgressDialog.show(getActivity(), "Loading...", "Please wait...", true);
 
                              //iterating through all
                              for (ParseObject announcementObject : objects){
