@@ -166,8 +166,8 @@ public class UpdateProfile extends AppCompatActivity implements View.OnClickList
                 else {
 
                     FancyToast.makeText(UpdateProfile.this,
-                            "Please Upload A Profile Picture" ,
-                            Toast.LENGTH_LONG, FancyToast.ERROR,
+                            "Please select an image for your Profile Picture !" ,
+                            Toast.LENGTH_LONG, FancyToast.WARNING,
                             true).show();
 
                 }

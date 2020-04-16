@@ -1,6 +1,7 @@
 package com.example.packtalk.activities.allactivities;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,6 +13,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -89,8 +91,20 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         //custom toolbar
         tabsHolderToolbar = findViewById(R.id.tabs_Holder_Toolbar);
         setSupportActionBar(tabsHolderToolbar);
-        tabsHolderToolbar.setTitle(R.string.app_name);
 
+//        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+//        actionBar.setDisplayOptions(actionBar.getDisplayOptions()
+//                | ActionBar.DISPLAY_SHOW_CUSTOM);
+//        ImageView imageView = new ImageView(actionBar.getThemedContext());
+//        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+//        imageView.setImageResource(R.drawable.app_name);
+//        ActionBar.LayoutParams layoutParams = new ActionBar.LayoutParams(
+//                10,
+//                10, Gravity.LEFT
+//                | Gravity.CENTER_VERTICAL);
+//        layoutParams.rightMargin = 40;
+//        imageView.setLayoutParams(layoutParams);
+//        actionBar.setCustomView(imageView);
 
         //Navigation Drawer Menu
         navigationView.bringToFront();

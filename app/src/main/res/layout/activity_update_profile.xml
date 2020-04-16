@@ -23,14 +23,14 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="35sp"
-            android:layout_height="35sp"
             android:id="@+id/imageViewBackButtonUPActivity"
-            android:clickable="true"
+            android:layout_width="26dp"
+            android:layout_height="35sp"
             android:layout_gravity="start"
-            android:src="@drawable/ic_backbutton"
+            android:layout_marginBottom="15sp"
+            android:clickable="true"
 
-            android:layout_marginBottom="15sp"/>
+            android:src="@drawable/ic_backbutton" />
 
 
         <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"

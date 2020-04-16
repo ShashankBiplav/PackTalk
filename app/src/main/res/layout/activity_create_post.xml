@@ -9,75 +9,122 @@
     android:layout_marginStart="24dp"
     android:layout_marginTop="8dp"
     android:orientation="vertical"
-    tools:context=".activities.allactivities.MakeAnnouncement">
+    tools:context=".activities.allactivities.CreatePost">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/CreatePostActivityProfilePicture"
-            android:layout_width="100sp"
-            android:layout_height="100sp"
-            android:clickable="true"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_defaultprofilepicture"
-            app:civ_border_color="#a6b1e1"
-            android:layout_marginTop="20sp"
-            app:civ_border_width="5sp" />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/announcementActivityUsername"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/leckerli_one"
-                android:text="Username"
-                android:textSize="24sp"
-                android:layout_marginTop="40dp"
-                android:layout_marginStart="10dp"/>
+            <ImageView
+                android:layout_width="35sp"
+                android:layout_height="35sp"
+                android:id="@+id/imageViewBackButtonCPActivity"
+                android:clickable="true"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_backbutton"
 
-            <TextView
-                android:id="@+id/announcementActivityEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sacramento"
-                android:text="email@example.com"
-                android:textSize="18sp"
-                android:layout_marginStart="10dp"/>
+                android:layout_marginBottom="15sp"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profilePictureCPActivity"
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:clickable="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_defaultprofilepicture"
+                    app:civ_border_color="#a6b1e1"
+                    android:layout_marginTop="20sp"
+                    app:civ_border_width="5sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/cPActivityUsername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/leckerli_one"
+                        android:text="Username"
+                        android:textSize="24sp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginStart="10dp"/>
+
+                    <TextView
+                        android:id="@+id/cPActivityEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sacramento"
+                        android:text="email@example.com"
+                        android:textSize="18sp"
+                        android:layout_marginStart="10dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250sp"
+                android:id="@+id/imageViewCPActivityUploadImage"
+                android:layout_marginTop="50sp"
+                android:src="@drawable/ic_upload_image"
+                android:elevation="2dp"
+                android:clickable="true"
+                android:background="@drawable/myrect"
+                android:scaleType="centerInside"
+                />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputEmail"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+                <EditText
+                    android:id="@+id/editTextUserCPActivity"
+                    style="@style/modifiedEditText"
+                    android:hint="Say something..."
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:gravity="top"
+                    android:maxLines="9"
+                    android:layout_marginHorizontal="10dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <Button-->
+<!--                android:id="@+id/buttonUploadPostCPActivity"-->
+<!--                style="@style/createPostButton"-->
+<!--                android:text="Upload Post"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:layout_marginTop="20sp"-->
+<!--                android:onClick="uploadPost"/>-->
+
+                <Button
+                    android:id="@+id/buttonUploadPostCPActivity"
+                    style="@style/createPostButton"
+                    android:text="Upload Post"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20sp"
+                   />
         </LinearLayout>
-    </LinearLayout>
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputEmail"
-        style="@style/parent"
-        android:layout_marginTop="@dimen/loginViewsMargin">
+    </ScrollView>
 
-        <EditText
-            android:id="@+id/editTextUserAnnouncement"
-            style="@style/modifiedEditText"
-            android:hint="@string/your_announcement_here"
-            android:inputType="textMultiLine"
-            android:lines="5"
-            android:gravity="top"
-            android:maxLines="9"
-            android:layout_marginHorizontal="10dp"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/buttonPostAnnouncement"
-        style="@style/loginButton"
-        android:text="Post Announcement"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20sp"
-        android:onClick="postAnnouncement"/>
 
 </LinearLayout>

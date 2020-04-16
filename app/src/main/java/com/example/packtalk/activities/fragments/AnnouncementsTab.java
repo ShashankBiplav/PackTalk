@@ -62,7 +62,7 @@ public class AnnouncementsTab extends Fragment{
 
             try {
 
-                final ProgressDialog progressDialog = ProgressDialog.show(getActivity(), "Loading Announcements...", "Please wait...", true);
+                final ProgressDialog progressDialog = ProgressDialog.show(getActivity(), "Loading Announcements", "Please wait...", true);
 
 
                 ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("myAnnouncement");
